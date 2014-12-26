@@ -6,28 +6,46 @@
     http://www.springframework.org/schema/security
     http://www.springframework.org/schema/security/spring-security-2.0.4.xsd">
 
-	<!-- auto-config 自动配置常用的权限控制机制 -->
-	<!-- servlet-api-provision 禁止保存登录之前的请求 -->
-	<!-- access-denied-page 访问未授权时的显示页面 -->
+	<!-- 
+		Web应用的安全性包括用户认证（Authentication）和用户授权（Authorization）两部分。
+		用户认证指的是验证某个用户是否为系统中的合法主体，也就是说用户能否访问该系统。
+		用户授权指的是验证某个用户是否有权限执行某个操作。
+		在一个系统中，不同用户所具有的权限是不同的。比如对一个资源来说，有的用户只能进行读取，而有的用户可以进行修改。一般来说，系统会为不同的用户分配不同的角色，而每个角色则对应一系列的权限。
+	-->
+	<!-- 
+        auto-config = true 则使用from-login. 如果不使用该属性 则默认为http-basic(没有session). 
+        lowercase-comparisons：表示URL比较前先转为小写。
+        path-type：表示使用Apache Ant的匹配模式。
+        access-denied-page：访问拒绝时转向的页面。
+        access-decision-manager-ref：指定了自定义的访问策略管理器。当系统角色名的前缀不是默认的ROLE_时，需要自定义访问策略管理器。
+        servlet-api-provision 禁止保存登录之前的请求 
+    -->
 	<sec:http auto-config="true" access-decision-manager-ref="accessDecisionManager" servlet-api-provision="false" access-denied-page="/html/error_page_access_denied.html">
 
 		<!-- 无需进行权限验证的路径 -->
 		<sec:intercept-url pattern="/sys/admin!login.action" filters="none" />
 		<sec:intercept-url pattern="/template/*" filters="none" />
 
-		<!-- login-page 登录页面 -->
-		<!-- default-target-url 登录成功后跳转的URL -->
-		<!-- always-use-default-target 是否登录后必须访问default-target-url -->
-		<!-- authentication-failure-url 登录失败后跳转的URL -->
+		<!-- 
+			login-page 登录页面 
+		 	default-target-url 登录成功后跳转的URL  
+		 	always-use-default-target 是否登录后必须访问default-target-url 
+		 	authentication-failure-url 登录失败后跳转的URL 
+		-->
 		<sec:form-login login-page="/sys/admin!login.action" login-processing-url="/sys/loginVerify" default-target-url="/sys/admin!changeRole.action"
 			authentication-failure-url="/sys/admin!login.action" always-use-default-target="true"  />
 
+		<!-- "记住我"功能，采用持久化策略（将用户的登录信息存放在数据库表中） -->
 		<sec:remember-me key="e37f8888-0ooo-22dd-bd0b-9900211c9a66" />
-
+		<!-- 
+            logout-url：指定了用于响应退出系统请求的URL。其默认值为：/j_spring_security_logout。
+            logout-success-url：退出系统后转向的URL。
+            invalidate-session：指定在退出系统时是否要销毁Session。
+        -->
 		<sec:logout invalidate-session="true" logout-success-url="/sys/admin!login.action" logout-url="/sys/logout" />
-
+		
 	</sec:http>
-
+		
 	<!-- 后台管理权限认证 -->
 	<sec:authentication-provider user-service-ref="adminDetailsServiceImpl">
 		<sec:password-encoder hash="md5" />
