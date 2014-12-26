@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <display-name>XDemo</display-name>
+  <description>XDemo开发框架</description>
+  
+  <!-- 1.启动Web项目时，容器（如Tomcat）读取web.xml中的两个节点：<listener></listener>和<context-param></context-param> -->
+  <!-- 2.紧接着，容器创建一个ServletContext(上下文)，这个WEB项目所有部分都将共享这个上下文 -->
+  <!-- 3.容器将<context-param></context-param>转化为键值对，并交给ServletContext -->
+  <!-- 4.容器创建<listener></listener>中的类实例，即创建监听 -->
+  <!-- 5.在监听中会有contextInitialized(ServletContextEventargs)初始化方法，在这个方法中可以获得ServletContext=ServletContextEvent.getServletContext();获取context-param的值=ServletContext.getInitParameter("context-param的键") -->
+  <!-- 6.得到context-param值后可以进行一些相关操作，这时候WEB项目还没有完全启动完成，这个动作会比所有的Servlet都要早 -->
+  <!-- 7.举例：在项目启动之前就打开数据库 -->
+  <!-- 8.这个监听是自己写的一个类，除了初始化方法，还有销毁方法。用于关闭应用前释放资源，比如说数据库连接的关闭 -->
+  
+  <!-- 加载spring配置文件 ,自定义spring配置文件名-->
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>classpath:applicationContext*.xml</param-value>
+  </context-param>
+  
+  <!-- 编码过滤器  -->
+  <!-- 当前台页面和JAVA代码中使用了不同的字符集进行编码的时候,就会出现表单提交的数据或者上传/下载中文名称文件出现乱码的问题 -->
+  <!-- 
+  		两个初始化参数: 
+  		encoding,用来指定一个具体的字符集 ;
+  		forceEncoding,当request中已经被指定了一个字符集的时候是否再将用endcoding对应的字符集设置到request中;
+  -->
+  <filter>
+    <filter-name>encodingFilter</filter-name>
+    <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>utf-8</param-value>
+    </init-param>
+    <init-param>
+      <param-name>forceEncoding</param-name>
+      <param-value>true</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>encodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <!-- 生成验证码过滤器  -->
+  <filter>
+    <filter-name>jCaptchaFilter</filter-name>
+    <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+    <init-param>
+      <param-name>targetFilterLifecycle</param-name>
+      <param-value>true</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>jCaptchaFilter</filter-name>
+    <url-pattern>/captcha.jpg</url-pattern>
+  </filter-mapping>
+  
+  <!-- 登录校验验证码过滤器 -->
+  <filter>
+    <filter-name>adminLoginJCaptchaFilter</filter-name>
+    <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+    <init-param>
+      <param-name>targetFilterLifecycle</param-name>
+      <param-value>true</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>adminLoginJCaptchaFilter</filter-name>
+    <url-pattern>/sys/loginVerify</url-pattern>
+  </filter-mapping>
+  
+  <!-- spring security身份验证和访问控制 -->
+  <filter>
+    <filter-name>springSecurityFilterChain</filter-name>
+    <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>springSecurityFilterChain</filter-name>
+    <url-pattern>/sys/*</url-pattern>
+  </filter-mapping>
+  
+  <!-- 缓存过滤器 -->
+  <!-- 
+  	OSCache组件中提供了一个CacheFilter用于实现页面级的缓存，主要用于对web应用中的某些动态页面进行缓存，
+  	尤其是那些需要生成pdf格式文件/报表、图片文件等的页面，不仅减少了数据库的交互、减少数据库服务器的压力，而且对于减少web服务器的性能消耗有很显著的效果。
+  	通过在web.xml中进行配置来决定缓存哪一个或者一组页面，而且还可以设置缓存的相关属性;
+  	[注]只有客户访问时返回http头信息中代码为200（也就是访问已经成功）的页面信息才能够被缓存。
+  	time属性设置缓存的时间段，默认为3600秒，可以根据自己的需要只有的设置，而scope属性设置，默认为application，可选项包括application、session
+   -->
+  <filter>
+    <filter-name>cacheFilter</filter-name>
+    <filter-class>com.opensymphony.oscache.web.filter.CacheFilter</filter-class>
+    <init-param>
+      <param-name>time</param-name>
+      <param-value>3600</param-value>
+    </init-param>
+    <init-param>
+      <param-name>scope</param-name>
+      <param-value>application</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>cacheFilter</filter-name>
+    <url-pattern>/shop/product!list.action</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>cacheFilter</filter-name>
+    <url-pattern>/shop/article!list.action</url-pattern>
+  </filter-mapping>
+  
+  <!-- 由 Spring 来控制 Hibernate 的 Session 在请求来的时候开启，走的时候关闭，保证了我们访问数据对象时的稳定性 -->
+  <filter>
+    <filter-name>openSessionInViewFilter</filter-name>
+    <filter-class>org.springframework.orm.hibernate3.support.OpenSessionInViewFilter</filter-class>
+    <init-param>
+      <param-name>excludeSuffixs</param-name>
+      <param-value>js,css,jpg,gif,png,bmp,jpeg</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>openSessionInViewFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <!-- Struts过滤器 -->
+  <filter>
+    <filter-name>struts</filter-name>
+    <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>struts</filter-name>
+    <url-pattern>*.action</url-pattern>
+  </filter-mapping>
+  
+  <servlet>
+    <servlet-name>JSPSupportServlet</servlet-name>
+    <servlet-class>org.apache.struts2.views.JspSupportServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  <!-- ContextLoaderListener的作用就是启动Web容器时，自动装配Spring ApplicationContext的配置信息。 -->
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  
+  <!-- 在web应用关闭的时候，清除JavaBeans Introspector的监听器，web.xml中注册这个listener，可以保证在web 应用关闭的时候释放与掉这个web 应用相关的class loader 和由它管理的类。 -->
+  <!-- 
+  	如果你使用了JavaBeans Introspector来分析应用中的类，Introspector 缓冲会保留这些类的引用，结果在你的应用关闭的时候，这些类以及web 应用相关的class loader没有被垃圾回收，
+  	不幸的是，清除Introspector的唯一方式是刷新整个缓冲，这是因为我们没法判断哪些是属于你的应用的引用.所以删除被缓冲的introspection会导致把这台电脑上的所有应用的introspection都删掉.
+  	需要注意的是，spring 托管的bean不需要使用这个监听器，因为spring它自己的introspection所使用的缓冲在分析完一个类之后会被马上从javaBeans Introspector缓冲中清除掉，
+  	应用程序中的类从来不直接使用JavaBeans Introspector，所以他们一般不会导致内存资源泄露。
+  	但是一些类库和框架的整合使用往往会产生这个问题，例如：Struts 和Quartz。由此造成的内存泄漏会导致整个的web应用的类加载器不能进行垃圾回收，
+  	在web应用关闭之后，你会看到此应用的所有静态类资源(例如单例），这个错误当然不是由这个类自身引起的。
+   -->
+  <listener>
+    <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+  </listener>
+  
+  <!-- 设置Session超时时间 -->
+  <session-config>
+    <session-timeout>60</session-timeout>
+  </session-config>
+  
+  <!-- 应用首页 -->
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.action</welcome-file>
+  </welcome-file-list>
+  
+  <!-- 异常页 -->
+  <error-page>
+    <exception-type>java.lang.Throwable</exception-type>
+    <location>/html/error_page.html</location>
+  </error-page>
+  <error-page>
+    <error-code>500</error-code>
+    <location>/html/error_page_500.html</location>
+  </error-page>
+  <error-page>
+    <error-code>404</error-code>
+    <location>/html/error_page_404.html</location>
+  </error-page>
+  <error-page>
+    <error-code>403</error-code>
+    <location>/html/error_page_403.html</location>
+  </error-page>
+  
+</web-app>
