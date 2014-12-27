@@ -34,12 +34,11 @@
 			<div class="headerMenu">
 				<div class="menuLeft"></div>
 				<ul>
-	            	<li><a href="menu!product.action" target="menuFrame" hidefocus="true">商品管理</a></li>
-	                <li><a href="menu!order.action" target="menuFrame" hidefocus="true">订单处理</a></li>
-	                <li><a href="menu!member.action" target="menuFrame" hidefocus="true">会员管理</a></li>
-	                <li><a href="menu!content.action" target="menuFrame" hidefocus="true">页面内容</a></li>
-	                <li><a href="menu!admin.action" target="menuFrame" hidefocus="true">管理员</a></li>
-	                <li><a href="menu!setting.action" target="menuFrame" hidefocus="true">网站设置</a></li>
+					<#list resourceList as list>
+						<#if resourceSet?contains(list)>
+							<li><a href="menu!menu.action?id=${list.id}&&roleid=${id}" target="menuFrame" hidefocus="true">${(list.name)!}</a></li>
+						</#if>	
+					</#list>
 	                <li class="home"><a href="${base}/" target="_blank" hidefocus="true"></a></li>
 	            </ul>
 	            <div class="menuRight"></div>

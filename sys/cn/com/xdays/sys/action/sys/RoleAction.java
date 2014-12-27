@@ -1,8 +1,12 @@
 package cn.com.xdays.sys.action.sys;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.convention.annotation.ParentPackage;
 import org.springframework.beans.BeanUtils;
@@ -10,6 +14,7 @@ import org.springframework.beans.BeanUtils;
 import cn.com.xdays.sys.entity.Admin;
 import cn.com.xdays.sys.entity.Resource;
 import cn.com.xdays.sys.entity.Role;
+import cn.com.xdays.sys.service.AdminService;
 import cn.com.xdays.sys.service.ResourceService;
 import cn.com.xdays.sys.service.RoleService;
 
@@ -180,5 +185,5 @@ public class RoleAction extends BaseAdminAction {
 	public void setAllResource(List<Resource> allResource) {
 		this.allResource = allResource;
 	}
-
+ 
 }

@@ -7,6 +7,8 @@ import java.util.Set;
 
 import javax.annotation.Resource;
 import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang.StringUtils;
@@ -21,6 +23,7 @@ import cn.com.xdays.sys.entity.Admin;
 import cn.com.xdays.sys.entity.Role;
 import cn.com.xdays.sys.service.AdminService;
 import cn.com.xdays.sys.service.MemberService;
+import cn.com.xdays.sys.service.ResourceService;
 import cn.com.xdays.sys.service.RoleService;
 import cn.com.xdays.xshop.service.ArticleService;
 import cn.com.xdays.xshop.service.MessageService;
@@ -61,8 +64,11 @@ public class AdminAction extends BaseAdminAction {
 	private String loginUsername;
 	
 	private Admin admin;
+	private Role role;
 	private List<Role> allRole;
 	private List<Role> roleList;
+	private List<cn.com.xdays.sys.entity.Resource> resourceList;
+	private Set<cn.com.xdays.sys.entity.Resource> resourceSet ;
 	private List<Role> adminRoles;
 
 	@Resource
@@ -77,6 +83,8 @@ public class AdminAction extends BaseAdminAction {
 	private ProductService productService;
 	@Resource
 	private MemberService memberService;
+	@Resource
+	private ResourceService resourceService;
 	@Resource
 	private ArticleService articleService;
 	@Resource
@@ -132,6 +140,13 @@ public class AdminAction extends BaseAdminAction {
 	
 	// 后台Header
 	public String header() {
+		resourceList = resourceService.getList("menulevel", "1");
+		role = roleService.get(id);
+		HttpServletRequest request = getRequest();
+		HttpSession  session = request.getSession();
+		session.setAttribute("role", role);
+		
+		resourceSet = role.getResourceSet();
 		return "header";
 	}
 	
@@ -154,6 +169,9 @@ public class AdminAction extends BaseAdminAction {
 	public String changeRole() {
 		String loginUsername = ((String) getSession("SPRING_SECURITY_LAST_USERNAME")).toLowerCase();
 		Admin admin = adminService.get("username", loginUsername);
+		HttpServletRequest request = getRequest();
+		HttpSession  session = request.getSession();
+		session.setAttribute("admin", admin);
 		Set<Role> roleSet = admin.getRoleSet();
 		adminRoles = new ArrayList<Role>(roleSet); 
 		return "changeRole";
@@ -352,6 +370,30 @@ public class AdminAction extends BaseAdminAction {
 
 	public void setAdminRoles(List<Role> adminRoles) {
 		this.adminRoles = adminRoles;
+	}
+
+	public Role getRole() {
+		return role;
+	}
+
+	public void setRole(Role role) {
+		this.role = role;
+	}
+
+	public List<cn.com.xdays.sys.entity.Resource> getResourceList() {
+		return resourceList;
+	}
+
+	public void setResourceList(List<cn.com.xdays.sys.entity.Resource> resourceList) {
+		this.resourceList = resourceList;
+	}
+
+	public Set<cn.com.xdays.sys.entity.Resource> getResourceSet() {
+		return resourceSet;
+	}
+
+	public void setResourceSet(Set<cn.com.xdays.sys.entity.Resource> resourceSet) {
+		this.resourceSet = resourceSet;
 	}
 
 	
