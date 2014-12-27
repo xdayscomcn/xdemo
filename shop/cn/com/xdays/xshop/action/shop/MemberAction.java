@@ -21,17 +21,17 @@ import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.convention.annotation.Results;
 
+import cn.com.xdays.sys.entity.Member;
+import cn.com.xdays.sys.service.MemberService;
 import cn.com.xdays.xshop.bean.CartItemCookie;
 import cn.com.xdays.xshop.bean.SystemConfig;
 import cn.com.xdays.xshop.common.JCaptchaEngine;
 import cn.com.xdays.xshop.entity.CartItem;
-import cn.com.xdays.xshop.entity.Member;
 import cn.com.xdays.xshop.entity.Product;
 import cn.com.xdays.xshop.service.AgreementService;
 import cn.com.xdays.xshop.service.CartItemService;
 import cn.com.xdays.xshop.service.MailService;
 import cn.com.xdays.xshop.service.MemberRankService;
-import cn.com.xdays.xshop.service.MemberService;
 import cn.com.xdays.xshop.service.ProductService;
 
 import com.octo.captcha.service.CaptchaService;

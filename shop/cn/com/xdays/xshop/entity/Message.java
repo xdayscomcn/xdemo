@@ -6,6 +6,8 @@ import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 
+import cn.com.xdays.sys.entity.Member;
+
 /**
  * 实体类 - 消息
  * ============================================================================

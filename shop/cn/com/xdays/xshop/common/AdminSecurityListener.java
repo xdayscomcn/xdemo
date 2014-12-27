@@ -15,9 +15,9 @@ import org.springframework.security.ui.WebAuthenticationDetails;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import cn.com.xdays.sys.entity.Admin;
+import cn.com.xdays.sys.service.AdminService;
 import cn.com.xdays.xshop.bean.SystemConfig;
-import cn.com.xdays.xshop.entity.Admin;
-import cn.com.xdays.xshop.service.AdminService;
 import cn.com.xdays.xshop.util.SystemConfigUtil;
 
 /**

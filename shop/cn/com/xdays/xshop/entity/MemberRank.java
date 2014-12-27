@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 
+import cn.com.xdays.sys.entity.Member;
+
 /**
  * 实体类 - 会员等级
  * ============================================================================

@@ -8,9 +8,9 @@ import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;
 
-import cn.com.xdays.xshop.dao.MemberDao;
-import cn.com.xdays.xshop.entity.Member;
-import cn.com.xdays.xshop.service.MemberService;
+import cn.com.xdays.sys.dao.MemberDao;
+import cn.com.xdays.sys.entity.Member;
+import cn.com.xdays.sys.service.MemberService;
 import cn.com.xdays.xshop.util.CommonUtil;
 
 /**

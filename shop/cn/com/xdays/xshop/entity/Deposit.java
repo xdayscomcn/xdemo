@@ -12,6 +12,7 @@ import javax.persistence.OneToOne;
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
 
+import cn.com.xdays.sys.entity.Member;
 import cn.com.xdays.xshop.util.SystemConfigUtil;
 
 /**

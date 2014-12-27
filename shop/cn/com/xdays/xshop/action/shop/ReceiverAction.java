@@ -8,7 +8,7 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.struts2.convention.annotation.ParentPackage;
 import org.springframework.beans.BeanUtils;
 
-import cn.com.xdays.xshop.entity.Member;
+import cn.com.xdays.sys.entity.Member;
 import cn.com.xdays.xshop.entity.Receiver;
 import cn.com.xdays.xshop.service.AreaService;
 import cn.com.xdays.xshop.service.ReceiverService;

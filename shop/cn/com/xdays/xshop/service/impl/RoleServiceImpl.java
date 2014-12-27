@@ -7,9 +7,9 @@ import org.springframework.security.intercept.web.FilterInvocationDefinitionSour
 import org.springframework.security.intercept.web.FilterSecurityInterceptor;
 import org.springframework.stereotype.Service;
 
-import cn.com.xdays.xshop.dao.RoleDao;
-import cn.com.xdays.xshop.entity.Role;
-import cn.com.xdays.xshop.service.RoleService;
+import cn.com.xdays.sys.dao.RoleDao;
+import cn.com.xdays.sys.entity.Role;
+import cn.com.xdays.sys.service.RoleService;
 import cn.com.xdays.xshop.util.SpringUtil;
 
 /**

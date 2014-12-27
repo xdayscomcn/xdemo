@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 
+import cn.com.xdays.sys.service.BaseService;
 import cn.com.xdays.xshop.entity.PaymentConfig;
 
 /**

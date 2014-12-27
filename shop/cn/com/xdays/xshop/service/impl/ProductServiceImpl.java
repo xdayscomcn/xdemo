@@ -20,12 +20,12 @@ import org.compass.core.CompassQuery.SortPropertyType;
 import org.compass.core.CompassQueryBuilder.CompassBooleanQueryBuilder;
 import org.springframework.stereotype.Service;
 
+import cn.com.xdays.sys.entity.Member;
 import cn.com.xdays.xshop.bean.HtmlConfig;
 import cn.com.xdays.xshop.bean.Pager;
 import cn.com.xdays.xshop.bean.ProductImage;
 import cn.com.xdays.xshop.bean.Pager.OrderType;
 import cn.com.xdays.xshop.dao.ProductDao;
-import cn.com.xdays.xshop.entity.Member;
 import cn.com.xdays.xshop.entity.Product;
 import cn.com.xdays.xshop.entity.ProductCategory;
 import cn.com.xdays.xshop.service.HtmlService;

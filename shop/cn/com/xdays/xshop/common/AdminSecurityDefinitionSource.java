@@ -14,8 +14,8 @@ import org.springframework.security.util.AntUrlPathMatcher;
 import org.springframework.security.util.UrlMatcher;
 import org.springframework.stereotype.Component;
 
-import cn.com.xdays.xshop.entity.Resource;
-import cn.com.xdays.xshop.service.ResourceService;
+import cn.com.xdays.sys.entity.Resource;
+import cn.com.xdays.sys.service.ResourceService;
 
 /**
  * 后台权限、资源对应关系

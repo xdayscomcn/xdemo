@@ -21,9 +21,9 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.freemarker.FreeMarkerTemplateUtils;
 
+import cn.com.xdays.sys.entity.Member;
 import cn.com.xdays.xshop.bean.MailConfig;
 import cn.com.xdays.xshop.bean.SystemConfig;
-import cn.com.xdays.xshop.entity.Member;
 import cn.com.xdays.xshop.service.MailService;
 import cn.com.xdays.xshop.util.SystemConfigUtil;
 import cn.com.xdays.xshop.util.TemplateConfigUtil;

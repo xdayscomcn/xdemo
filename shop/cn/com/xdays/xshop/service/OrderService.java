@@ -1,7 +1,8 @@
 package cn.com.xdays.xshop.service;
 
+import cn.com.xdays.sys.entity.Member;
+import cn.com.xdays.sys.service.BaseService;
 import cn.com.xdays.xshop.bean.Pager;
-import cn.com.xdays.xshop.entity.Member;
 import cn.com.xdays.xshop.entity.Order;
 
 /**

@@ -9,10 +9,10 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.struts2.convention.annotation.ParentPackage;
 import org.springframework.beans.BeanUtils;
 
-import cn.com.xdays.xshop.entity.Member;
+import cn.com.xdays.sys.entity.Member;
+import cn.com.xdays.sys.service.MemberService;
 import cn.com.xdays.xshop.entity.Message;
 import cn.com.xdays.xshop.entity.Message.DeleteStatus;
-import cn.com.xdays.xshop.service.MemberService;
 import cn.com.xdays.xshop.service.MessageService;
 
 import com.opensymphony.xwork2.interceptor.annotations.InputConfig;

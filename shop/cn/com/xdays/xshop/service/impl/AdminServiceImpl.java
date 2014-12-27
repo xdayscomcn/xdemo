@@ -6,9 +6,9 @@ import org.springframework.security.Authentication;
 import org.springframework.security.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
-import cn.com.xdays.xshop.dao.AdminDao;
-import cn.com.xdays.xshop.entity.Admin;
-import cn.com.xdays.xshop.service.AdminService;
+import cn.com.xdays.sys.dao.AdminDao;
+import cn.com.xdays.sys.entity.Admin;
+import cn.com.xdays.sys.service.AdminService;
 
 /**
  * Service实现类 - 管理员

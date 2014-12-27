@@ -16,8 +16,9 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.struts2.convention.annotation.ParentPackage;
 import org.springframework.beans.BeanUtils;
 
+import cn.com.xdays.sys.entity.Member;
+import cn.com.xdays.sys.service.MemberService;
 import cn.com.xdays.xshop.entity.Deposit;
-import cn.com.xdays.xshop.entity.Member;
 import cn.com.xdays.xshop.entity.MemberAttribute;
 import cn.com.xdays.xshop.entity.MemberRank;
 import cn.com.xdays.xshop.entity.Deposit.DepositType;
@@ -25,7 +26,6 @@ import cn.com.xdays.xshop.entity.MemberAttribute.AttributeType;
 import cn.com.xdays.xshop.service.DepositService;
 import cn.com.xdays.xshop.service.MemberAttributeService;
 import cn.com.xdays.xshop.service.MemberRankService;
-import cn.com.xdays.xshop.service.MemberService;
 
 import com.opensymphony.xwork2.interceptor.annotations.InputConfig;
 import com.opensymphony.xwork2.validator.annotations.EmailValidator;

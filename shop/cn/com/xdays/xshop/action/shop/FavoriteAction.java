@@ -9,10 +9,10 @@ import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.convention.annotation.Results;
 
+import cn.com.xdays.sys.entity.Member;
+import cn.com.xdays.sys.service.MemberService;
 import cn.com.xdays.xshop.bean.Pager;
-import cn.com.xdays.xshop.entity.Member;
 import cn.com.xdays.xshop.entity.Product;
-import cn.com.xdays.xshop.service.MemberService;
 import cn.com.xdays.xshop.service.ProductService;
 
 import com.opensymphony.xwork2.interceptor.annotations.InputConfig;

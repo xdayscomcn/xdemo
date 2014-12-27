@@ -4,7 +4,7 @@ import javax.annotation.Resource;
 
 import org.apache.struts2.convention.annotation.ParentPackage;
 
-import cn.com.xdays.xshop.service.MemberService;
+import cn.com.xdays.sys.service.MemberService;
 import cn.com.xdays.xshop.service.MessageService;
 
 /**

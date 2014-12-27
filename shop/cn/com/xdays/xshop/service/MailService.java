@@ -2,7 +2,7 @@ package cn.com.xdays.xshop.service;
 
 import java.util.Map;
 
-import cn.com.xdays.xshop.entity.Member;
+import cn.com.xdays.sys.entity.Member;
 
 /**
  * Service接口 - 邮件服务

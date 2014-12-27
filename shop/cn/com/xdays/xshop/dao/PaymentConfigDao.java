@@ -2,6 +2,7 @@ package cn.com.xdays.xshop.dao;
 
 import java.util.List;
 
+import cn.com.xdays.sys.dao.BaseDao;
 import cn.com.xdays.xshop.entity.PaymentConfig;
 
 /**

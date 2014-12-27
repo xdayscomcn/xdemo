@@ -5,9 +5,9 @@ import java.util.List;
 
 import org.hibernate.criterion.DetachedCriteria;
 
+import cn.com.xdays.sys.dao.BaseDao;
+import cn.com.xdays.sys.service.BaseService;
 import cn.com.xdays.xshop.bean.Pager;
-import cn.com.xdays.xshop.dao.BaseDao;
-import cn.com.xdays.xshop.service.BaseService;
 
 /**
  * Service实现类 - Service实现类基类

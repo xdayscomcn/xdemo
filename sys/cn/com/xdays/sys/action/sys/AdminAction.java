@@ -17,15 +17,15 @@ import org.springframework.security.BadCredentialsException;
 import org.springframework.security.DisabledException;
 import org.springframework.security.LockedException;
 
-import cn.com.xdays.xshop.entity.Admin;
-import cn.com.xdays.xshop.entity.Role;
-import cn.com.xdays.xshop.service.AdminService;
+import cn.com.xdays.sys.entity.Admin;
+import cn.com.xdays.sys.entity.Role;
+import cn.com.xdays.sys.service.AdminService;
+import cn.com.xdays.sys.service.MemberService;
+import cn.com.xdays.sys.service.RoleService;
 import cn.com.xdays.xshop.service.ArticleService;
-import cn.com.xdays.xshop.service.MemberService;
 import cn.com.xdays.xshop.service.MessageService;
 import cn.com.xdays.xshop.service.OrderService;
 import cn.com.xdays.xshop.service.ProductService;
-import cn.com.xdays.xshop.service.RoleService;
 
 import com.opensymphony.xwork2.interceptor.annotations.InputConfig;
 import com.opensymphony.xwork2.validator.annotations.EmailValidator;

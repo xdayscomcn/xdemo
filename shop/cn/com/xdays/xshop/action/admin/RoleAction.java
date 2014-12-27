@@ -7,11 +7,11 @@ import java.util.Set;
 import org.apache.struts2.convention.annotation.ParentPackage;
 import org.springframework.beans.BeanUtils;
 
-import cn.com.xdays.xshop.entity.Admin;
-import cn.com.xdays.xshop.entity.Resource;
-import cn.com.xdays.xshop.entity.Role;
-import cn.com.xdays.xshop.service.ResourceService;
-import cn.com.xdays.xshop.service.RoleService;
+import cn.com.xdays.sys.entity.Admin;
+import cn.com.xdays.sys.entity.Resource;
+import cn.com.xdays.sys.entity.Role;
+import cn.com.xdays.sys.service.ResourceService;
+import cn.com.xdays.sys.service.RoleService;
 
 import com.opensymphony.xwork2.interceptor.annotations.InputConfig;
 import com.opensymphony.xwork2.validator.annotations.RegexFieldValidator;

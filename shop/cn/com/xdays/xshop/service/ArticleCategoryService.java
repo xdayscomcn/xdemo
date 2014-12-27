@@ -2,6 +2,7 @@ package cn.com.xdays.xshop.service;
 
 import java.util.List;
 
+import cn.com.xdays.sys.service.BaseService;
 import cn.com.xdays.xshop.entity.Article;
 import cn.com.xdays.xshop.entity.ArticleCategory;
 

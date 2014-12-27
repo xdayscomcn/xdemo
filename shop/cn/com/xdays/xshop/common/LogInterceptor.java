@@ -8,10 +8,10 @@ import org.apache.commons.lang.ArrayUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.struts2.ServletActionContext;
 
+import cn.com.xdays.sys.service.AdminService;
 import cn.com.xdays.xshop.action.admin.BaseAdminAction;
 import cn.com.xdays.xshop.entity.Log;
 import cn.com.xdays.xshop.entity.LogConfig;
-import cn.com.xdays.xshop.service.AdminService;
 import cn.com.xdays.xshop.service.LogConfigService;
 import cn.com.xdays.xshop.service.LogService;
 

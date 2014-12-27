@@ -5,9 +5,9 @@ import org.springframework.security.intercept.web.FilterInvocationDefinitionSour
 import org.springframework.security.intercept.web.FilterSecurityInterceptor;
 import org.springframework.stereotype.Service;
 
-import cn.com.xdays.xshop.dao.ResourceDao;
-import cn.com.xdays.xshop.entity.Resource;
-import cn.com.xdays.xshop.service.ResourceService;
+import cn.com.xdays.sys.dao.ResourceDao;
+import cn.com.xdays.sys.entity.Resource;
+import cn.com.xdays.sys.service.ResourceService;
 import cn.com.xdays.xshop.util.SpringUtil;
 
 /**

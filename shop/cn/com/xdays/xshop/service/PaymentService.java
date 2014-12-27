@@ -1,5 +1,6 @@
 package cn.com.xdays.xshop.service;
 
+import cn.com.xdays.sys.service.BaseService;
 import cn.com.xdays.xshop.entity.Payment;
 
 /**

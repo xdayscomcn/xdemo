@@ -20,11 +20,11 @@ import org.apache.struts2.convention.annotation.ParentPackage;
 import org.hibernate.Hibernate;
 
 import sun.misc.BASE64Decoder;
+import cn.com.xdays.sys.entity.Member;
 import cn.com.xdays.xshop.bean.TenpayConfig;
 import cn.com.xdays.xshop.bean.SystemConfig.StoreFreezeTime;
 import cn.com.xdays.xshop.bean.TenpayConfig.TenpayType;
 import cn.com.xdays.xshop.entity.Deposit;
-import cn.com.xdays.xshop.entity.Member;
 import cn.com.xdays.xshop.entity.Order;
 import cn.com.xdays.xshop.entity.OrderItem;
 import cn.com.xdays.xshop.entity.OrderLog;

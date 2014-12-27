@@ -4,10 +4,10 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
+import cn.com.xdays.sys.entity.Member;
 import cn.com.xdays.xshop.bean.Pager;
 import cn.com.xdays.xshop.dao.DepositDao;
 import cn.com.xdays.xshop.entity.Deposit;
-import cn.com.xdays.xshop.entity.Member;
 import cn.com.xdays.xshop.service.DepositService;
 
 /**

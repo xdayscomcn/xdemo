@@ -6,8 +6,8 @@ import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.struts2.convention.annotation.ParentPackage;
 
-import cn.com.xdays.xshop.entity.Admin;
-import cn.com.xdays.xshop.service.AdminService;
+import cn.com.xdays.sys.entity.Admin;
+import cn.com.xdays.sys.service.AdminService;
 
 import com.opensymphony.xwork2.interceptor.annotations.InputConfig;
 import com.opensymphony.xwork2.validator.annotations.EmailValidator;

@@ -15,15 +15,15 @@ import net.sf.json.JSONObject;
 import org.apache.commons.lang.StringUtils;
 import org.apache.struts2.ServletActionContext;
 
+import cn.com.xdays.sys.entity.Member;
+import cn.com.xdays.sys.service.MemberService;
 import cn.com.xdays.xshop.bean.Pager;
 import cn.com.xdays.xshop.bean.SystemConfig;
 import cn.com.xdays.xshop.entity.Footer;
 import cn.com.xdays.xshop.entity.FriendLink;
-import cn.com.xdays.xshop.entity.Member;
 import cn.com.xdays.xshop.entity.Navigation;
 import cn.com.xdays.xshop.service.FooterService;
 import cn.com.xdays.xshop.service.FriendLinkService;
-import cn.com.xdays.xshop.service.MemberService;
 import cn.com.xdays.xshop.service.NavigationService;
 import cn.com.xdays.xshop.util.SystemConfigUtil;
 

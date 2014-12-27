@@ -66,41 +66,10 @@
 		<!--指明使用标注的实体类-->
 		<property name="annotatedClasses">
 			<list>
-				<value>cn.com.xdays.xshop.entity.Area</value>
-				<value>cn.com.xdays.xshop.entity.LogConfig</value>
-				<value>cn.com.xdays.xshop.entity.Log</value>
-				<value>cn.com.xdays.xshop.entity.Admin</value>
-				<value>cn.com.xdays.xshop.entity.Role</value>
-				<value>cn.com.xdays.xshop.entity.Resource</value>
-				<value>cn.com.xdays.xshop.entity.MemberRank</value>
-				<value>cn.com.xdays.xshop.entity.Member</value>
-				<value>cn.com.xdays.xshop.entity.MemberAttribute</value>
-				<value>cn.com.xdays.xshop.entity.Receiver</value>
-				<value>cn.com.xdays.xshop.entity.ProductCategory</value>
-				<value>cn.com.xdays.xshop.entity.Product</value>
-				<value>cn.com.xdays.xshop.entity.ProductType</value>
-				<value>cn.com.xdays.xshop.entity.ProductAttribute</value>
-				<value>cn.com.xdays.xshop.entity.Brand</value>
-				<value>cn.com.xdays.xshop.entity.Navigation</value>
-				<value>cn.com.xdays.xshop.entity.ArticleCategory</value>
-				<value>cn.com.xdays.xshop.entity.Article</value>
-				<value>cn.com.xdays.xshop.entity.FriendLink</value>
-				<value>cn.com.xdays.xshop.entity.Footer</value>
-				<value>cn.com.xdays.xshop.entity.Agreement</value>
-				<value>cn.com.xdays.xshop.entity.Message</value>
-				<value>cn.com.xdays.xshop.entity.CartItem</value>
-				<value>cn.com.xdays.xshop.entity.PaymentConfig</value>
-				<value>cn.com.xdays.xshop.entity.Deposit</value>
-				<value>cn.com.xdays.xshop.entity.Payment</value>
-				<value>cn.com.xdays.xshop.entity.Refund</value>
-				<value>cn.com.xdays.xshop.entity.Shipping</value>
-				<value>cn.com.xdays.xshop.entity.Reship</value>
-				<value>cn.com.xdays.xshop.entity.DeliveryType</value>
-				<value>cn.com.xdays.xshop.entity.DeliveryCorp</value>
-				<value>cn.com.xdays.xshop.entity.DeliveryItem</value>
-				<value>cn.com.xdays.xshop.entity.Order</value>
-				<value>cn.com.xdays.xshop.entity.OrderItem</value>
-				<value>cn.com.xdays.xshop.entity.OrderLog</value>
+				<value>cn.com.xdays.sys.entity.Admin</value>
+				<value>cn.com.xdays.sys.entity.Role</value>
+				<value>cn.com.xdays.sys.entity.Resource</value>
+				<value>cn.com.xdays.sys.entity.Member</value>
 			</list>
 		</property>
 		

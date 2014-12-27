@@ -16,6 +16,7 @@ import javax.persistence.Table;
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
 
+import cn.com.xdays.sys.entity.Member;
 import cn.com.xdays.xshop.entity.Product.WeightUnit;
 import cn.com.xdays.xshop.util.SystemConfigUtil;
 

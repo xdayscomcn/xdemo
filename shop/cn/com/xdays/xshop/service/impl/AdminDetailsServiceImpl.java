@@ -15,10 +15,10 @@ import org.springframework.security.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import cn.com.xdays.sys.dao.AdminDao;
+import cn.com.xdays.sys.entity.Admin;
+import cn.com.xdays.sys.entity.Role;
 import cn.com.xdays.xshop.bean.SystemConfig;
-import cn.com.xdays.xshop.dao.AdminDao;
-import cn.com.xdays.xshop.entity.Admin;
-import cn.com.xdays.xshop.entity.Role;
 import cn.com.xdays.xshop.util.SystemConfigUtil;
 
 /**

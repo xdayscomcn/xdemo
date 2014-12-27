@@ -9,6 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Transient;
 
+import cn.com.xdays.sys.entity.Member;
 import cn.com.xdays.xshop.util.SystemConfigUtil;
 
 /**

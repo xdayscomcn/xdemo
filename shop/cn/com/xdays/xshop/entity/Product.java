@@ -32,6 +32,7 @@ import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 import org.hibernate.annotations.MapKey;
 
+import cn.com.xdays.sys.entity.Member;
 import cn.com.xdays.xshop.bean.ProductImage;
 import cn.com.xdays.xshop.util.SystemConfigUtil;
 

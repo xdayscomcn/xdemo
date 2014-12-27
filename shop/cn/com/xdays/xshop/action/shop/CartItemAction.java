@@ -20,10 +20,10 @@ import net.sf.json.JsonConfig;
 import org.apache.commons.lang.StringUtils;
 import org.apache.struts2.convention.annotation.ParentPackage;
 
+import cn.com.xdays.sys.entity.Member;
 import cn.com.xdays.xshop.bean.CartItemCookie;
 import cn.com.xdays.xshop.bean.SystemConfig.PointType;
 import cn.com.xdays.xshop.entity.CartItem;
-import cn.com.xdays.xshop.entity.Member;
 import cn.com.xdays.xshop.entity.Product;
 import cn.com.xdays.xshop.service.CartItemService;
 import cn.com.xdays.xshop.service.ProductService;
