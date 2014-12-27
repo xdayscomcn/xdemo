@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springmodules.cache.annotations.CacheFlush;
 import org.springmodules.cache.annotations.Cacheable;
 
+import cn.com.xdays.sys.service.impl.BaseServiceImpl;
 import cn.com.xdays.xshop.dao.MemberAttributeDao;
 import cn.com.xdays.xshop.entity.MemberAttribute;
 import cn.com.xdays.xshop.service.MemberAttributeService;

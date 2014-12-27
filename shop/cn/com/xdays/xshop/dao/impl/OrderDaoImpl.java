@@ -6,6 +6,7 @@ import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 
+import cn.com.xdays.sys.dao.impl.BaseDaoImpl;
 import cn.com.xdays.sys.entity.Member;
 import cn.com.xdays.xshop.bean.Pager;
 import cn.com.xdays.xshop.dao.OrderDao;

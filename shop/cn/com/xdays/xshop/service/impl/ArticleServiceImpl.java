@@ -19,6 +19,7 @@ import org.compass.core.CompassQuery.SortPropertyType;
 import org.compass.core.CompassQueryBuilder.CompassBooleanQueryBuilder;
 import org.springframework.stereotype.Service;
 
+import cn.com.xdays.sys.service.impl.BaseServiceImpl;
 import cn.com.xdays.xshop.bean.HtmlConfig;
 import cn.com.xdays.xshop.bean.Pager;
 import cn.com.xdays.xshop.dao.ArticleDao;

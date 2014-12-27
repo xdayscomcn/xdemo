@@ -1,4 +1,4 @@
-package cn.com.xdays.xshop.service.impl;
+package cn.com.xdays.sys.service.impl;
 
 import javax.annotation.Resource;
 

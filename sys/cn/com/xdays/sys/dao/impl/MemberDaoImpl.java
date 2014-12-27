@@ -1,4 +1,4 @@
-package cn.com.xdays.xshop.dao.impl;
+package cn.com.xdays.sys.dao.impl;
 
 import java.util.Set;
 

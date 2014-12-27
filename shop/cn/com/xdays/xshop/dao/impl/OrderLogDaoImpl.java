@@ -2,6 +2,7 @@ package cn.com.xdays.xshop.dao.impl;
 
 import org.springframework.stereotype.Repository;
 
+import cn.com.xdays.sys.dao.impl.BaseDaoImpl;
 import cn.com.xdays.xshop.dao.OrderLogDao;
 import cn.com.xdays.xshop.entity.OrderLog;
 

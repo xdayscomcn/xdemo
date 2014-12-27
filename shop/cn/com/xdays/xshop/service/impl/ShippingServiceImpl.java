@@ -4,6 +4,7 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
+import cn.com.xdays.sys.service.impl.BaseServiceImpl;
 import cn.com.xdays.xshop.dao.ShippingDao;
 import cn.com.xdays.xshop.entity.Shipping;
 import cn.com.xdays.xshop.service.ShippingService;

@@ -1,17 +1,19 @@
-package cn.com.xdays.xshop.service.impl;
+package cn.com.xdays.sys.service.impl;
+
+import javax.annotation.Resource;
 
 import org.springframework.beans.factory.FactoryBean;
 import org.springframework.security.intercept.web.FilterInvocationDefinitionSource;
 import org.springframework.security.intercept.web.FilterSecurityInterceptor;
 import org.springframework.stereotype.Service;
 
-import cn.com.xdays.sys.dao.ResourceDao;
-import cn.com.xdays.sys.entity.Resource;
-import cn.com.xdays.sys.service.ResourceService;
+import cn.com.xdays.sys.dao.RoleDao;
+import cn.com.xdays.sys.entity.Role;
+import cn.com.xdays.sys.service.RoleService;
 import cn.com.xdays.xshop.util.SpringUtil;
 
 /**
- * Service实现类 - 资源
+ * Service实现类 - 角色
  * ============================================================================
  * 版权所有 2008-2010 长沙鼎诚软件有限公司，并保留所有权利。
  * ----------------------------------------------------------------------------
@@ -19,61 +21,62 @@ import cn.com.xdays.xshop.util.SpringUtil;
  * ----------------------------------------------------------------------------
  * 官方网站：http://www.shopxx.net
  * ----------------------------------------------------------------------------
- * KEY: SHOPXX4A623EE5B41AA0C9684A6CC39B0268B1
+ * KEY: SHOPXX5780B32776CB0A6FF3A3530C4BC96D54
  * ============================================================================
  */
 
 @Service
-public class ResourceServiceImpl extends BaseServiceImpl<Resource, String> implements ResourceService {
+public class RoleServiceImpl extends BaseServiceImpl<Role, String> implements RoleService {
 	
-	@javax.annotation.Resource
-	ResourceDao resourceDao;
+	@Resource
+	RoleDao roleDao;
 
-	@javax.annotation.Resource
-	public void setBaseDao(ResourceDao resourceDao) {
-		super.setBaseDao(resourceDao);
+	@Resource
+	public void setBaseDao(RoleDao roleDao) {
+		super.setBaseDao(roleDao);
 	}
-
+	
 	// 重写方法，删除时刷新SpringSecurity权限信息
 	@Override
-	public void delete(Resource resource) {
-		resourceDao.delete(resource);
-		resourceDao.flush();
+	public void delete(Role role) {
+		roleDao.delete(role);
+		roleDao.flush();
 		flushSpringSecurity();
 	}
 
 	// 重写方法，删除时刷新SpringSecurity权限信息
 	@Override
 	public void delete(String id) {
-		Resource resource = resourceDao.load(id);
-		this.delete(resource);
+		Role role = roleDao.load(id);
+		this.delete(role);
 	}
 
 	// 重写方法，删除时刷新SpringSecurity权限信息
 	@Override
 	public void delete(String[] ids) {
 		for (String id : ids) {
-			Resource resource = resourceDao.load(id);
-			resourceDao.delete(resource);
+			Role role = roleDao.load(id);
+			roleDao.delete(role);
 		}
-		resourceDao.flush();
+		roleDao.flush();
 		flushSpringSecurity();
 	}
 
 	// 重写方法，保存时刷新SpringSecurity权限信息
 	@Override
-	public String save(Resource resource) {
-		String id = resourceDao.save(resource);
-		resourceDao.flush();
+	public String save(Role role) {
+		String id = roleDao.save(role);
+		roleDao.flush();
+		roleDao.clear();
 		flushSpringSecurity();
 		return id;
 	}
 
 	// 重写方法，更新时刷新SpringSecurity权限信息
 	@Override
-	public void update(Resource resource) {
-		resourceDao.update(resource);
-		resourceDao.flush();
+	public void update(Role role) {
+		roleDao.update(role);
+		roleDao.flush();
 		flushSpringSecurity();
 	}
 	

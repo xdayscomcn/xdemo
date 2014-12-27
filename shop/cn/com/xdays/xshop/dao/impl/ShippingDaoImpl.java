@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
+import cn.com.xdays.sys.dao.impl.BaseDaoImpl;
 import cn.com.xdays.xshop.dao.ShippingDao;
 import cn.com.xdays.xshop.entity.Shipping;
 

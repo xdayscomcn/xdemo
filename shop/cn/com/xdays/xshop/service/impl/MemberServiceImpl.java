@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import cn.com.xdays.sys.dao.MemberDao;
 import cn.com.xdays.sys.entity.Member;
 import cn.com.xdays.sys.service.MemberService;
+import cn.com.xdays.sys.service.impl.BaseServiceImpl;
 import cn.com.xdays.xshop.util.CommonUtil;
 
 /**

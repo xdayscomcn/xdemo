@@ -5,6 +5,7 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import cn.com.xdays.sys.entity.Member;
+import cn.com.xdays.sys.service.impl.BaseServiceImpl;
 import cn.com.xdays.xshop.bean.Pager;
 import cn.com.xdays.xshop.dao.OrderDao;
 import cn.com.xdays.xshop.entity.Order;
